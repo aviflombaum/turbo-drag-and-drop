@@ -8,9 +8,6 @@ gem "rails", github: "rails/rails", branch: "main"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use postgres as the database for Active Record
-gem "pg"
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 6.0"
 
@@ -78,3 +75,5 @@ group :development do
 end
 
 gem "shadcn-ui", github: "aviflombaum/shadcn-rails"
+
+gem "litestack", "~> 0.3.0"

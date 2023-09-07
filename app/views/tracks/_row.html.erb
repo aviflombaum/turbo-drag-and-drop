@@ -1,0 +1,13 @@
+<%= table_row id: dom_id(row), draggable: true, data: {
+  action: "dragstart->track#dragTrack",
+  player_target: "tracks",
+  player_track_id: row.id,
+  track_id: row.id,
+  controller: "track"
+} do %>
+  <%= table_column do %>
+  <% end %>
+  <%= table_column do %>
+    <%= row.name %>
+  <% end %>
+<% end %>

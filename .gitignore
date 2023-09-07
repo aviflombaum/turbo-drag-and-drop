@@ -36,3 +36,7 @@ node_modules
 .env
 .editorconfig
 .vscode
+
+# Ignore default Litestack SQLite databases.
+/db/**/*.sqlite3
+/db/**/*.sqlite3-*

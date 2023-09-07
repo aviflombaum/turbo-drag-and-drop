@@ -1,0 +1,48 @@
+<aside class="hidden md:block col-span-1 border-r pt-4">
+  <div class="space-y-4">
+    <div>
+      <div class="flex justify-between items-center pl-6 pr-3">
+        <h2 class="relative text-lg font-semibold tracking-tight">Playlists</h2>
+        <%= render_button as: :link, href: new_playlist_path, data: {turbo_frame: "new_playlist"}, variant: :ghost, class: "px-2" do %>
+          + Add
+        <% end %>
+      </div>
+      <div class="px-3"><%= turbo_frame_tag "new_playlist" %></div>
+      <div dir="ltr" class="relative px-1">
+        <div class="h-full w-full rounded-[inherit]">
+          <!-- <div style="min-width: 100%; display: table">
+            <%#= turbo_frame_tag "user_playlists" do %>
+              <div data-controller="playlists">
+                <%#= render collection: current_user.user_playlists, partial: "user_playlists/list" %>
+              </div>
+              <%# end %>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+<section class="col-span-5 md:col-span-4 pt-4">
+  <div class="rounded-md">
+    <div class="w-full flex px-6 py-2 justify-between  border-b">
+      <h1 class="font-bold">Tracks</h1>
+    </div>
+    <div class="flex">
+      <div class="w-full">
+        <div class="w-full h-full flex">
+          <%= render_table do %>
+            <%= table_head do %>
+              <%= table_header "", class: "w-1" %>
+              <%= table_header class: "" do %>
+                Title
+              <% end %>
+            <% end %>
+            <%= table_body do %>
+              <%= render partial: "row", collection: @tracks %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
