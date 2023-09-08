@@ -1,0 +1,24 @@
+<div class="space-y-1 p-2"  ">
+  <%= link_to playlist_path(playlist), class: "focus-visible:ring-ring hover:bg-accent
+            hover:text-accent-foreground inline-flex h-9 w-full items-center justify-start
+            rounded-md px-4 py-2 text-sm font-normal transition-colors focus-visible:outline-none
+            focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50" , turbo_frame: "_top", data:
+            {turbo_frame: "_top", controller: "playlists", action: "drop->playlists#addTrack dragover->playlists#trackOver dragleave->playlists#trackLeave dragend->playlists#trackLeave", playlist_id: playlist.id} do %>
+    <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="mr-2 h-4 w-4">
+      <path d="M21 15V6"></path>
+      <path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+      <path d="M12 12H3"></path>
+      <path d="M16 6H3"></path>
+      <path d="M12 18H3"></path>
+    </svg>
+    <%= playlist.name %>
+  <% end %>
+</div>

@@ -10,13 +10,13 @@
       <div class="px-3"><%= turbo_frame_tag "new_playlist" %></div>
       <div dir="ltr" class="relative px-1">
         <div class="h-full w-full rounded-[inherit]">
-          <!-- <div style="min-width: 100%; display: table">
-            <%#= turbo_frame_tag "user_playlists" do %>
+          <div style="min-width: 100%; display: table">
+            <%= turbo_frame_tag "playlists" do %>
               <div data-controller="playlists">
-                <%#= render collection: current_user.user_playlists, partial: "user_playlists/list" %>
+                <%= render collection: Playlist.all, partial: "playlists/playlist" %>
               </div>
-              <%# end %>
-            </div> -->
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

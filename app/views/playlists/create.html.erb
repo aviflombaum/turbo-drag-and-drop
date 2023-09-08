@@ -1,4 +1,6 @@
-<div>
-  <h1 class="font-bold text-4xl">Playlists#create</h1>
-  <p>Find me in app/views/playlists/create.html.erb</p>
-</div>
+<%= turbo_frame_tag "playlists" do %>
+  <%= render collection: Playlist.all, partial: "playlist" %>
+  <script>
+    document.querySelector("form#new_playlist").remove()
+  </script>
+<% end %>
