@@ -115,6 +115,10 @@
   label.error {
     @apply text-destructive;
   }
+
+  input.error:focus-visible {
+    @apply ring-destructive;
+  }
 }
 
 input[type="range"] {
