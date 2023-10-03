@@ -1,0 +1,9 @@
+<%= render_form_for @playlist do |form| %>
+  <div class="my-2">
+    <%= form.text_field :name, autofocus: true %>
+  </div>
+  <div class="flex justify-between items-center">
+    <%= form.submit "Create", class: "text-sm px-2 py-1" %>
+    <%= render_button "Cancel", as: :link, href: playlists_path, variant: :ghost, class: "text-sm px-2 py-1" %>
+  </div>
+<% end %>

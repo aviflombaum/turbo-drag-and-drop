@@ -1,6 +1,0 @@
-<%= turbo_frame_tag "playlists" do %>
-  <%= render collection: Playlist.all, partial: "playlist" %>
-  <script>
-    document.querySelector("form#new_playlist").remove()
-  </script>
-<% end %>

@@ -1,14 +1,3 @@
-<%= turbo_frame_tag "new_playlist" do %>
-  <%= render_form_for(@playlist, data: {turbo_frame: "playlists"}) do |form| %>
-    <div class="my-2">
-      <%= form.text_field :name %>
-    </div>
-    <div class="flex justify-between items-center">
-      <%= form.submit "Create", class: "text-sm px-2 py-1" %>
-      <%= render_button "Cancel", variant: :ghost, class: "text-sm px-2 py-1", data: {controller: "playlists", action: "click->playlists#cancelNewPlaylist"} %>
-    </div>
-  <% end %>
-  <script>
-    document.getElementById("playlist_name").focus();
-  </script>
+<%= render "playlists/playlists" do %>
+  <div class="px-3"><%= render "form" %></div>
 <% end %>

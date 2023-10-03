@@ -1,0 +1,22 @@
+<%= turbo_frame_tag "playlists" do %>
+  <div class="space-y-4">
+    <div>
+      <div class="flex justify-between items-center pl-6 pr-3">
+        <h2 class="relative text-lg font-semibold tracking-tight">Playlists</h2>
+        <%= render_button as: :link, href: new_playlist_path, variant: :ghost, class: "px-2" do %>
+          + Add
+        <% end %>
+      </div>
+      <%= yield %>
+      <div dir="ltr" class="relative px-1">
+        <div class="h-full w-full rounded-[inherit]">
+          <div style="min-width: 100%; display: table">
+            <div data-controller="playlists">
+              <%= render collection: Playlist.all, partial: "playlists/playlist" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

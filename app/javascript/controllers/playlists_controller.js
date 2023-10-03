@@ -3,11 +3,6 @@ import { post } from "@rails/request.js";
 import { playlistsTracks } from "lib/routes";
 
 export default class PlaylistsController extends Controller {
-  cancelNewPlaylist(e) {
-    e.preventDefault();
-    document.querySelector("form#new_playlist").remove();
-  }
-
   async addTrack(event) {
     event.preventDefault();
     console.log("Add Track");
